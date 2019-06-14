@@ -1,15 +1,15 @@
 ---
 id: wallet
-title: Create a Wallet
+title: 创建钱包
 ---
 
-To get started on your journey with CKB, the first thing you need is to create a wallet for yourself.
+要开始使用 CKB，您首先需要为自己创建一个钱包。
 
-We have provided [a CKB compatible command line tool CKB-CLI](https://github.com/TheWaWaR/ckb-cli) for you to do this.
+我们提供了一个 [命令行工具CKB-CLI](https://github.com/TheWaWaR/ckb-cli) 来帮您完成这一步。
 
-## Installation
+## 安装
 
-Download the latest version of CKB-CLI from [GitHub releases](https://github.com/TheWaWaR/ckb-cli/releases):
+从 [GitHub Release](https://github.com/TheWaWaR/ckb-cli/releases)下载最新版本的 CKB-CLI：
 
 <!-- Todo: change the ckb-cli version here -->
 
@@ -43,7 +43,7 @@ wget http://ckbbin.engpro.cryptape.com/ckb-cli-v0.1.2-linux-musl.tar.gz
 
 > 如果您发现下载文件很慢，您也可以选择直接</a>使用浏览器从网站下载 。</p> </blockquote> 
 > 
-> Then unzip the file and add it to your system PATH:
+> 然后解压缩文件并将其添加到系统路径：
 > 
 > <!--DOCUSAURUS_CODE_TABS-->
 > 
@@ -63,7 +63,7 @@ sudo ln -snf "$(pwd)/ckb-cli" /usr/local/bin/ckb-cli
 
 <!--END_DOCUSAURUS_CODE_TABS-->
 
-Now you have successfully installed the CKB-CLI. You can check if it works with:
+现在您已成功安装了CKB-CLI。 您可以使用以下命令来检查它是否工作：
 
 ```bash
 ckb-cli --version
@@ -72,7 +72,7 @@ ckb-cli --version
 <!-- Todo: change the response here -->
 
 <details>
-<summary>(click here to view response)</summary>
+<summary>(点击此处查看响应)</summary>
 
 ```bash
 $ ckb-cli --version
@@ -81,18 +81,18 @@ ckb-cli 0.1.2 ( 2019-05-29)
 
 </details>
 
-If you see the response above, you have successfully installed CKB-CLI.
+如果您看到上面的响应，则表示您已成功安装 CKB-CLI。
 
-## Create Wallet
+## 创建钱包
 
-You can generate a private key with the following command:
+您可以使用以下命令来生成私钥：
 
 ```bash
 ckb-cli wallet generate-key --privkey-path privkey
 ```
 
 <details>
-<summary>(click here to view response)</summary>
+<summary>(点击此处查看响应)</summary>
 
 ```bash
 $ ckb-cli wallet generate-key --privkey-path privkey
@@ -111,14 +111,14 @@ args = ["0x7e6bccda0abe748eb5dc74be0e797662ae938036"]
 
 </details>
 
-In the output message, you can find the following information:
+在输出消息中，您可以找到以下信息：
 
-* `[block_assembler]` is needed for configuring your miner software, so **please keep a record of it**.
-* `address` is the address of the generated [wallet](../basic-concepts/states-tokens#wallet).
-* `lock_hash` is needed for [unlocking Cells](../basic-concepts/architecture#lock-script).
-* `pubkey` is the public key of this wallet.
+* 配置矿工软件需要`[block_assembler]` 部分 ，所以 **请务必记录下来**。
+* `address` 是生成的[钱包的地址](../basic-concepts/states-tokens#wallet)。
+* `lock_hash`是用来[解锁 Cell](../basic-concepts/architecture#lock-script) 用的。
+* `pubkey` 是这个钱包的公钥。
 
-This command will also create a file named `privkey` in your current folder. 在此文件中，您可以找到您的私钥（文件的第一行）及其地址（第二行）。
+此命令还将在当前文件夹中创建名为 `privkey` 的文件。 在此文件中，您可以找到您的私钥（文件的第一行）及其地址（第二行）。
 
 <details>
 <summary>（点击此处查看示例 <code>privkey</code>）</summary>
@@ -130,26 +130,26 @@ ckt1q9gry5zg0e4ueks2he6gadwuwjlqu7tkv2hf8qpkf47x2u
 
 </details>
 
-> Note that your private key is the only key to your tokens and assets. Losing private key or give it to others is as same as losing your tokens or give them away.
+> 请注意，您的私钥是使用您 Token 和资产的唯一钥匙。 丢失私钥或将其交给他人等价于失去您的 Token。
 
-## Import Wallet
+## 导入钱包
 
-If you already have a private key, you can import it into CKB-CLI to see its address or `block_assembler` information.
+如果您已有私钥，则可以将其导入 CKB-CLI 以查看其地址或 `block_assembler` 信息。
 
-You need to create a file named `privkey` that has your private key in it:
+您需要创建一个名为 `privkey` 的文件，其中包含您的私钥：
 
 ```bash
 echo '<your-private-key>' > privkey
 ```
 
-Then you can see your wallet information with:
+然后您可以看到您的钱包信息：
 
 ```bash
 ckb-cli wallet key-info --privkey-path privkey
 ```
 
 <details>
-<summary>(click here to view an example)</summary>
+<summary>(点击此处查看响应)</summary>
 
 ```bash
 $ echo '9404a426fa4a7b2e431f75e70d0b458233cbe04b8617935582cb39925892a429' > privkey
@@ -169,6 +169,6 @@ args = ["0x7e6bccda0abe748eb5dc74be0e797662ae938036"]
 
 </details>
 
-Now you have successfully created your own wallet. Congratulations! 您现在可以尝试启动自己的 CKB 节点了。
+现在您已成功创建自己的钱包。 恭喜！ 您现在可以尝试启动自己的 CKB 节点了。
 
-If you find any problems, please refer to the [trouble shooting document](../references/troubleshooting).
+如果有任何问题，请查看 [故障排除文档](../references/troubleshooting)。
