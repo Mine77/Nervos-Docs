@@ -1,17 +1,17 @@
 ---
 id: mine
-title: Mine Some CK Bytes
+title: 开始挖矿
 ---
 
-Now you have [created a wallet](wallet) and [started running a node](run-node) The next step is to run the miner program and earn some CKB.
+现在你已经 [创建了一个钱包](wallet) 并且 [开始运行节点](run-node)，下一步是运行矿工程序来挖矿并获得一些CKB。
 
-> Please note that before you start to mine, you should wait until the `ckb run` have synchronized to the [latest height](https://explorer.nervos.org/).
+> 请注意，您应该等到 `ckb run` 进程同步到 [最新高度](https://explorer.nervos.org/)，再启动挖矿程序。
 
-## Run Miner
+## 运行挖矿程序
 
-The miner process of CKB is not integrated with the main CKB process. So to run the CKB miner, you need to open another terminal instance while **keeping the `ckb run` process still alive**.
+CKB 的挖矿程序并未与 CKB 的主程序结合起来。 因此，要运行 CKB 挖矿程序，你需要打开另一个终端 shell，同时 **保持 `ckb run` 仍在运行**。
 
-Open another terminal in your node configuration folder `ckb-testnet` and run:
+在节点配置文件夹 `ckb-testnet` 中打开另一个终端并运行：
 
 ```bash
 ckb miner
@@ -19,7 +19,7 @@ ckb miner
 
 现在，CKB 节点和挖矿程序应该都已经正常工作了。
 
-Wait for around a minute and when you see message like this, it means you have mined a new block:
+等待片刻之后，当你看到这样的消息时，这意味着你已经开采出了一个新的块：
 
 ```bash
 2019-05-02 12:19:23.463 +08:00 main INFO miner \
@@ -29,6 +29,6 @@ found seal: Seal { \
 }
 ```
 
-You can check your CKB balance with your address on [CKB explorer](https://explorer.nervos.org/).
+您可以在 [CKB Explorer](https://explorer.nervos.org/)上使用你的地址来查看您的CKB Token 余额。
 
-If there are any problems, check out the [trouble shooting document](../references/troubleshooting).
+如果有任何问题，请查看 [故障排除文档](../references/troubleshooting)。
