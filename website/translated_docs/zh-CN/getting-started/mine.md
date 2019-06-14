@@ -17,7 +17,7 @@ Open another terminal in your node configuration folder `ckb-testnet` and run:
 ckb miner
 ```
 
-Then both the main process and the miner should be working now.
+现在，CKB 节点和挖矿程序应该都已经正常工作了。
 
 Wait for around a minute and when you see message like this, it means you have mined a new block:
 
