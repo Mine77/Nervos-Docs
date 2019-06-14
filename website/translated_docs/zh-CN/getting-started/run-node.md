@@ -3,29 +3,29 @@ id: run-node
 title: 运行 CKB 节点
 ---
 
-Once you have successfully [created your own wallet](wallet), you can try to run a node now.
+一旦你成功的 [创建了自己的钱包](wallet)，就可以开始试着运行节点了。
 
-If you are not familiar with the concepts of node and mining yet, [here is a document](../basic-concepts/node-mining) you can learn from.
+如果您还不熟悉节点和挖矿的概念，这里有一个 [您可以学习的文档](../basic-concepts/node-mining)。
 
-## Get CKB Client
+## 获取 CKB 客户端
 
-To get the CKB client software, you can choose to download the released binary directly, or [build it from the source code](../dev-guide/compile), or [use docker](https://github.com/nervosnetwork/ckb/blob/develop/docs/run-ckb-with-docker.md).
+要获得CKB客户端软件，你可以选择直接下载官方发布的二进制文件，或者[从源代码编译获得可执行文件](../dev-guide/compile)或[使用 Docker](https://github.com/nervosnetwork/ckb/blob/develop/docs/run-ckb-with-docker.md) 来运行节点。
 
-> For Windows user, we recommend you to use Docker for running CKB node.
+> 对于Windows用户，我们建议您使用 Docker 运行 CKB 节点。
 
-In this guidance we use the pre-built binary directly.
+在本教程中，我们将直接使用预先编译好的二进制可执行文件。
 
-### Dependencies
+### 安装依赖软件
 
-CentOS users please use the `x86_64-unknown-centos-gnu` package, which also requires OpenSSL 1.0 to run:
+CentOS 用户请使用 `x86_64-unknown-centos-gnu` 软件包。另外还需要安装 OpenSSL 1.0 才能正常运行软件：
 
 ```shell
 sudo yum install openssl-libs
 ```
 
-### Download
+### 下载软件
 
-Download the binary file from the CKB releases page on GitHub:
+从 GitHub 上的 CKB 发布页面下载二进制文件：
 
 <!-- Todo: change the release version here -->
 
@@ -54,11 +54,11 @@ curl -L -O https://github.com/nervosnetwork/ckb/releases/download/v0.13.0/ckb_v0
 
 <!--END_DOCUSAURUS_CODE_TABS-->
 
-> If you can not download from command line, you can go to [GitHub releases page](https://github.com/nervosnetwork/ckb/releases/tag/v0.13.0) to download from your browser directly.
+> 如果无法从命令行下载，您也可以 [直接从浏览器下载](https://github.com/nervosnetwork/ckb/releases/tag/v0.13.0) 。
 > 
-> The `.asc` files are signatures. It is wise and more secure to check out for the files [integrity](https://github.com/nervosnetwork/ckb/blob/develop/docs/integrity-check.md).
+> `.asc` 文件是软件包的签名。 建议您亲自检查并确认文件的 [完整性](https://github.com/nervosnetwork/ckb/blob/develop/docs/integrity-check.md)。
 
-Then unzip the file:
+然后解压缩文件：
 
 <!--DOCUSAURUS_CODE_TABS-->
 
@@ -78,13 +78,13 @@ cd ckb_v0.13.0_x86_64-unknown-linux-gnu
 
 <!--END_DOCUSAURUS_CODE_TABS-->
 
-After it is downloaded and unzipped, you need to copy the `ckb` binary file to a `PATH` directory. In the unzipped folder:
+下载并解压缩后，需要将 `ckb` 二进制文件复制到 `PATH` 目录。 在解压缩的文件夹中：
 
 ```bash
 sudo ln -snf "$(pwd)/ckb" /usr/local/bin/ckb
 ```
 
-Then check if it works with:
+然后检查它是否正常工作：
 
 ```bash
 ckb --version
@@ -93,7 +93,7 @@ ckb --version
 <!-- Todo: change the response here -->
 
 <details>
-<summary>(click here to view response)</summary>
+<summary>(点击此处查看响应)</summary>
 
 ```bash
 $ ckb --version
@@ -102,11 +102,11 @@ ckb 0.13.0 (rylai-v2 v0.13.0 2019-06-01)
 
 </details>
 
-If you see the response above, you have successfully installed CKB.
+如果您看到上面的响应，则表示您已成功安装 CKB 软件。
 
-## Configurations
+## 配置
 
-You can generate the default configuration files for connecting with our testnet with the following command. It will make a workshop folder called `ckb-testnet` and the generated files will be in this folder:
+您可以使用以下命令生成用于连接我们的测试网所需要的默认配置文件。 它将创建一个名为 `ckb-testnet` 的文件夹，生成的配置文件将被放在此文件夹中：
 
 ```bash
 ckb init -C ckb-testnet --chain testnet && \
@@ -114,7 +114,7 @@ cd ckb-testnet
 ```
 
 <details>
-<summary>(click here to view response)</summary>
+<summary>(点击此处查看响应)</summary>
 
 ```bash
 $ ckb init -C ckb-testnet --chain testnet && \
@@ -126,7 +126,7 @@ create ckb-miner.toml
 
 </details>
 
-Then you can find a `ckb.toml` file in the generated `ckb-testnet` folder, which contains the configurations of your CKB node.
+然后，您可以在生成的 `ckb-testnet` 文件夹中找到 `ckb.toml` 文件，该文件夹包含CKB节点的配置。
 
 要设置您的矿工钱包，您需要将 [钱包创建](wallet#create-wallet) 时获得的 `[block_assembler]` 添加到 `ckb.toml` 文件的末尾（请在以下命令中替换 `<YOUR-CODE_HASH>` 和 `<YOUR-ARGS>` 部分）
 
@@ -139,7 +139,7 @@ EOT
 ```
 
 <details>
-<summary>(click here to view an example)</summary>
+<summary>(点击此处查看响应)</summary>
 
 ```bash
 $ cat <<EOT >> ckb.toml
@@ -151,16 +151,16 @@ EOT
 
 </details>
 
-## Start a Node
+## 启动节点
 
-Now you can start the CKB client to run a node:
+现在您可以启动 CKB 客户端来运行节点：
 
 ```bash
 ckb run
 ```
 
 <details>
-<summary>(click here to view response)</summary>
+<summary>(点击此处查看响应)</summary>
 
 ```bash
 $ ckb run
@@ -177,6 +177,6 @@ $ ckb run
 
 </details>
 
-Congratulations! You just started a CKB node!
+恭喜！ 你刚刚启动了一个CKB节点！
 
-If you find any error messages, don't worry, check out the [trouble shooting document](../references/troubleshooting).
+如果您发现任何错误消息，请查看 [故障排除文档](../references/troubleshooting)。
