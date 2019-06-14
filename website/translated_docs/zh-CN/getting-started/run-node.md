@@ -1,6 +1,6 @@
 ---
 id: run-node
-title: Run a CKB Node
+title: 运行 CKB 节点
 ---
 
 Once you have successfully [created your own wallet](wallet), you can try to run a node now.
@@ -128,7 +128,7 @@ create ckb-miner.toml
 
 Then you can find a `ckb.toml` file in the generated `ckb-testnet` folder, which contains the configurations of your CKB node.
 
-To set your miner wallet, you need to add the `[block_assembler]` you got from your [wallet creation](wallet#create-wallet) to the end of the `ckb.toml` file (Please replace the `<YOUR-CODE_HASH>` and `<YOUR-ARGS>` parts in the following command)
+要设置您的矿工钱包，您需要将 [钱包创建](wallet#create-wallet) 时获得的 `[block_assembler]` 添加到 `ckb.toml` 文件的末尾（请在以下命令中替换 `<YOUR-CODE_HASH>` 和 `<YOUR-ARGS>` 部分）
 
 ```bash
 cat <<EOT >> ckb.toml
