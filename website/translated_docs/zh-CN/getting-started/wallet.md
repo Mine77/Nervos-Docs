@@ -41,15 +41,15 @@ wget http://ckbbin.engpro.cryptape.com/ckb-cli-v0.1.2-linux-musl.tar.gz
 
 <!--END_DOCUSAURUS_CODE_TABS-->
 
-> For users who find it is slow to download the file, you can choose to download [from the website](https://github.com/TheWaWaR/ckb-cli/releases) directly using your browser.
-
-Then unzip the file and add it to your system PATH:
-
-<!--DOCUSAURUS_CODE_TABS-->
-
-<!--macOS-->
-
-```bash
+> 如果您发现下载文件很慢，您也可以选择直接</a>使用浏览器从网站下载 。</p> </blockquote> 
+> 
+> Then unzip the file and add it to your system PATH:
+> 
+> <!--DOCUSAURUS_CODE_TABS-->
+> 
+> <!--macOS-->
+> 
+> ```bash
 tar -xzvf ckb-cli-v0.1.2-apple-drawin.tar.gz && \
 sudo ln -snf "$(pwd)/ckb-cli" /usr/local/bin/ckb-cli
 ```
@@ -118,10 +118,10 @@ In the output message, you can find the following information:
 * `lock_hash` is needed for [unlocking Cells](../basic-concepts/architecture#lock-script).
 * `pubkey` is the public key of this wallet.
 
-This command will also create a file named `privkey` in your current folder. In this file you can find your private key (the first line of the file) and its address (the second line).
+This command will also create a file named `privkey` in your current folder. 在此文件中，您可以找到您的私钥（文件的第一行）及其地址（第二行）。
 
 <details>
-<summary>(click here to view an example <code>privkey</code>)</summary>
+<summary>（点击此处查看示例 <code>privkey</code>）</summary>
 
 ```bash
 9404a426fa4a7b2e431f75e70d0b458233cbe04b8617935582cb39925892a429
@@ -169,6 +169,6 @@ args = ["0x7e6bccda0abe748eb5dc74be0e797662ae938036"]
 
 </details>
 
-Now you have successfully created your own wallet. Congratulations! You can try to start your own node now.
+Now you have successfully created your own wallet. Congratulations! 您现在可以尝试启动自己的 CKB 节点了。
 
 If you find any problems, please refer to the [trouble shooting document](../references/troubleshooting).
